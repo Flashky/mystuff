@@ -57,3 +57,9 @@ git merge nombre_rama
 
 # Subir la rama fusionada a remoto
 git push origin master
+
+# Borrar una rama local
+git branch -d nombre_rama
+
+# Borrar una rama remota (cuando hayamos terminado, fusionado a master y subido a remoto).
+git push origin -d nombre_rama
