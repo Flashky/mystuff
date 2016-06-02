@@ -1,0 +1,4 @@
+1. Abrir CMD como administrador
+
+2. Ejecutar la siguiente sentencia, donde el primer parámetro es el fichero msi y el segundo la ruta donde queremos descomprimir
+msiexec /a C:\Users\xe36776\Downloads\StarUML-v2.6.0.msi /qb TARGETDIR=C:\Users\xe36776\Aplicaciones\StarUML
