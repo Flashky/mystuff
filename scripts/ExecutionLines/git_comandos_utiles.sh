@@ -51,6 +51,11 @@ git checkout nombre_rama
 # Para poder hacer esto, hay que subir la rama al repositorio remoto antes de empezar a subir cambios:
 git push origin nombre_rama
 
+# Adicionalmente, habrá que situarse en nuestra rama y añadir los nuevos ficheros a la misma y hacer commit, para dejar claro que los ficheros pertenecen a nuestra rama:
+touch fichero_ejemplo.txt
+git add fichero_ejemplo.txt
+git push
+
 # Fusionar una rama con la rama principal
 git checkout master
 git merge nombre_rama
