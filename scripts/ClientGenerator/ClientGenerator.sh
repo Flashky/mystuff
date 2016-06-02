@@ -1,6 +1,6 @@
 #!/bin/ksh
 
-# Parámetros de entrada:
+# Parametros de entrada:
 #
 # $1 entorno del cual se quiere generar un cliente.
 #  	Ejemplo, para generar el cliente de DC1:
@@ -16,17 +16,16 @@
 # /usr/local/qa/appl/batch/conf
 #
 # Por lo tanto, lo ideal sería que haya dos constantes declaradas para los distintos tipos de ruta.
-# - El parámetro de entrada debería ser convertido siempre a minúsculas.
-# - Se evaluará si dicho parámetro vale pi o qa para poner una ruta u otra.
-# - PI es también conocido como ei, así que se evaluará también tanto 'ei' como 'pi'.
+# - El parametro de entrada debería ser convertido siempre a minusculas.
+# - Se evaluara si dicho parametro vale pi o qa para poner una ruta u otra.
+# - PI es tambien conocido como ei, asi que se evaluará tambien tanto 'ei' como 'pi'.
 
 
-# 1. Captura de parámetros.
-# 2. Convertir a minúsculas.
+# 1. Captura de parametros.
+# 2. Convertir a minusculas.
 # 3. Establecer que ruta ha de leer.
-# 4. Leer el fichero de mb_usuario.cfg para obtener ciertos parámetros
-# 5. Ejecutar sustitución sobre las plantillas.
-# 6. ¿Hacer ftp?
+# 4. Leer el fichero de mb_usuario.cfg para obtener ciertos parametros
+# 5. Ejecutar sustitucion sobre las plantillas.
 
 
 
