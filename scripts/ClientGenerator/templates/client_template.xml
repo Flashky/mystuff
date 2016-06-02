@@ -1,0 +1,134 @@
+﻿<?xml version="1.0"?>
+<ClientConfig>
+	<Screen Banner="N">
+		<!--Banner represents the black banner that contains the name of the current screen within the navigation hierarchy. . Values are Y or N, default is No -->
+		<Title AddMxInfo="Y" AddUserInfo="Y">ENVIRONMENT</Title>
+			<!-- It represents the title of the client  sessions frames. The AddMxInfo and AddUserInfo attributes can take "Y" or "N"  -->
+		<Dimension Width="800" Height="600"/>
+		<!-- It represents the initial dimension of the client session frames. Attributes Width and Height values are an integer number of pixels. Default height is 900 and default width is 700.-->
+		<Font FontFactor="0.9" Name="Dialog"/>
+		<!-- it represents the general font of the characters printed in the application. Attributes FontFactor : it's a factor that will multiply the current size of the font. Value is an Integer, default is 1. Name: it's the name of the font that will be used by Java. Value is a String and default is Dialog -->
+	</Screen>
+	<MainBar>
+	    <!--
+		<Dimension Width="900" Height="700"/>
+		<!-- This is the dimension of the main bar. Width value: size in pixels, default is Screen width, Height value is size in pixels-->
+		<Title Name="Entorno ENVIRONMENT"/>
+		<!--Title is the tile of the main bar, could be the same as the custom frame title. Attribute Name is a String value -->
+	</MainBar>
+	<WarningMessage>
+		<!-- displays a warning message just after the Start or Select and start, WarningMessage children are Warning messages to display before opening the session  -->
+		<Heuristics>
+			<Factors>
+				<Char CharFactor="0.9"/>
+				<!-- CharFactor is a factor that will multiply the width of the estimated size of the text fields and labels. Values are Integers, default is 1.0 -->
+			</Factors>
+		</Heuristics>
+	</WarningMessage>
+	<MSOffice>
+		<Excel LaunchExcelServer="N"/>
+		<!--LaunchExcelServer: will automatically launch the Excel Server (which is normally launched by Tools\Launch Excel Server), values are Y or N, default is Y -->
+	</MSOffice>
+	<ExcelPath ThreadSleep="2000">	C:\Program Files\Microsoft Office\Office11\EXCEL.EXE</ExcelPath>
+	<!--Child is the local path to Excel, attribut: ThreadSleep is is the refresh rate of the Excel Bridge thread. Values are time im ms, default is 2000-->
+	<Email SendEmailMode="AskUser"/>
+	<!--Attribute SendEmailMode: If a problem occurs, then it will send automatically a mail, ask the user, or do nothing.  Values can be "SendAutomaticMail", "AskUser", "SendNoMail", default is "AskUser" -->
+	<Log>
+		<LogLevels MX="0"/>
+		<!-- MX attribute is the MX log level, values are Integer between 0 and 5, default is 0 -->
+	</Log>
+	<Menus>
+		<VisibleMenus>15</VisibleMenus>
+		<!-- This is the limit number of menus that should be visible directly per level (if there are more menus at one level, they will be accessible from a "more" menu if the MenuType is set to "MORE"). The number of visible menus per level (default is 15) -->
+		<MenuType>MORE</MenuType>
+		<!-- Values can be MORE or NORMAL -->
+		<ModifyArguments Inhibate="N"/>
+		<!-- it will disable or not the Modify Arguments menu item. Attribute Inhibate Values are Y or N, default is N-->
+		<LaunchExcelServer Inhibate="N"/>
+		<!--it will disable or not the Launch Excel Server menu item. Attribute Inhibate values are Y or N, default is N -->
+		<UITools Inhibate="N"/>
+		<!-- It will disable or not the UI Tools menu. Inhibate attribute values are Y or N, default is N  -->
+	</Menus>
+	<LookAndFeels>
+		<!-- Used to specify a list of additional java Look And Feels -->
+		<LookAndFeel Default="Y">
+			<!-- A single Look and Feel. Attributes Default: values are Y or N, default value is N -->
+			<NickName>Murex</NickName>
+			<!-- The display name (found in UITools /  Look And Feel). Value is a String -->
+			<ClassName>murex.gui.jfcutil.plaf.MxLookAndFeel</ClassName>
+			<!-- The java class to load for this Look And Feel. Value is a String, complete java path including package -->
+		</LookAndFeel>
+	</LookAndFeels>
+	<Locale Language="en" Country="US" DateFormat="NONE" ExcelDateFormat="dd/mm/yy"/>
+	<!--changes the regional settings. -->
+	<!--Attribute Language: sets the regional setting's language, values fr, de, etc, ISO language code) default is the Java Virtual Machine's default.-->
+	<!-- Attribute Country: Sets the regional setting's country , values are FR, DE, etc (ISO Country Code), default The Java Virtual Machine's default.   -->
+	<!-- Attribute DateFormat: Sets the Locale (European, American or Asian) used for exporting dates.  Values "European" (DDMMYYYY) , "American" (MMDDYYYY) , "Asian" (YYYYMMDD) and "NONE" to take only the default local or directly the Excel Date Format. Default is "NONE"-->
+	<!--Attribute  ExcelDateFormat. Sets the format for exporting Date . Values: "dd/mm/yy", "dd/mm/yyyy", "dd-mm-yy", "dd-mm-yyyy", "yymmdd", ...-->
+	<OldTree Activated="N"/>
+	<!--OldTree: Forces the use of standard trees (instead of graphs). Attribute Activated: Activates or Deactivates the forcing to use standard tree. Attribute Activated, values are Y or N, default is N -->
+	<SmallFigures Activated="N"/>
+	<!--SmallFigures allows to type the last decimals instead of the complete value in some numerical field. Attribute Activated: activates the feature. Values are Y or N, default is N-->
+	<LongBidAsk Activated="N"/>
+	<!--LonBidAsk  force Bid/Ask fields to displays both bid and ask fully. If not activated only the difference is shown in the ask. Default is to let the binary decides.-->
+	<ExtendPrecision Activated="Y" Width="20" Decimals="10"/>
+	<!--ExtendPrecision will display the full precision figure in the bottom right hand side corner when the cursor is on a numeric fields. Attributes: -->
+	<!--Activated : Activates the feature. Values are Y or N, default is N -->
+	<!--Width : Displayed number total width in characters. Value is an Integer, default is 10 -->
+	<!-- Decimals: Displayed number of decimals in characters. Value is an Integer, default is 5 -->
+	<FastDealInputMode Synchronous="N" PrecisionWarning="N" PrecisionWarningDecimals="7" TimerActive="N" TimerPeriod="1000"/>
+	<!-- It is used to customize the FDI. Attributes: -->
+	<!--Synchronous: Sets the FDI client to be synchronous with the server.Values are Y or N. Default is N -->
+	<!--PrecisionWarning: Shows a warning on fields that do not display the full precision (according the precision warning decimals). Attributes values are Y or N, default is N -->
+	<!--PrecisionWarningDecimals, value is an Integer, default is 7 -->
+	<!--TimerActive: Activates a timer that auto validates the current template. Values are Y or N, default is N -->
+	<!--TimerPeriod: The timer rates, value is in time in ms, default 1000 -->
+	<DecimalSettings RoundingUp="N"/>
+	<!--Attribute RoundingUp forces the rounding up. Values are Y or N, default is N -->
+	<PrintingConfiguration>
+		<!--Sets the printing preferences-->
+		<PrintSetup>
+			<!--General printings settings -->
+			<PaperFormat>A4</PaperFormat>
+			<!--The printing paper format, value is a String,  A4, A3, .., default is A4.-->
+			<Orientation>Portrait</Orientation>
+			<!--Printing orientation, values are: Landscape or  Portrait, default is Portrait-->
+			<Margins>
+				<!-- values numéric unit is cm, default is 1.0 -->
+				<Left>1.0</Left>
+				<Right>1.0</Right>
+				<Top>1.0</Top>
+				<Bottom>1.0</Bottom>
+			</Margins>
+		</PrintSetup>
+		<PrintMatrixSetup>
+			<!--Specific settings for printing matrix, all children values are Y or N, default is N-->
+			<RowBorder>N</RowBorder>
+			<!--Prints row border, values Y or N-->
+			<ColumnBorder>N</ColumnBorder>
+			<!--Prints column border, values Y or N -->
+			<Preview>N</Preview>
+			<!--Display a preview before printing, values Y or N-->
+			<AllPages>N</AllPages>
+			<!--Force to print all pages of a matrix, values Y or N-->
+			<FontFactor>N</FontFactor>
+			<!--Specific font factor for matrix printing, values Y or N-->
+		</PrintMatrixSetup>
+		<PrintScreenSetup>
+			<!--Specific settings for printing screen-->
+			<XScale> 0.7</XScale>
+			<!--Horizontal scale applied when printing screen. Values are numeric, default is 0.7-->
+			<YScale> 0.6</YScale>
+			<!-- Vertical scale applied when printing screen, values are numeric, default is 0.6-->
+			<FitPage>N</FitPage>
+			<!--Dynamically calculates scales to fit the page, values are Y or N -->
+		</PrintScreenSetup>
+	</PrintingConfiguration>
+	<Notation Separator=":"/>
+	<!-- Settings for numeric fields using a specific notation. Attribute Separtator: Decimal separator used in notation, values can be any character, default is ":"-->
+	<BeeperSound>string value: path to an audio file to replace the O.S.Beep	</BeeperSound>
+	<!--Customization of the O.S. beeper, Values : string (path to an audio file to replace the O.S. Beep)-->
+	<WebBrowser Location=""/>
+	<HelpFile Location="webapps/mxdoc/index.html"/>
+</ClientConfig>
+<!-- updated on 15/09/06 -->

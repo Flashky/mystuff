@@ -1,0 +1,23 @@
+@ECHO OFF
+
+REM Mx G2000 Monitor Launcher
+REM Mofify this script to match your java and server environnement
+
+setlocal
+
+SET JAVAHOME=C:\Program Files\Java\jre7F
+call config.cmd
+
+SET PATH=%JAVAHOME%\jre\bin;%JAVAHOME%\jre\bin\client;%JAVAHOME%\bin;%JAVAHOME%\bin\classic;bin\;%PATH%
+
+SET MXJ_JAR_FILELIST=murex.download.monit.download
+SET MXJ_POLICY=java.policy
+SET MXJ_BOOT=mxjboot.jar
+SET MXJ_LOG_LEVEL=3
+
+title %~n0 FS:%MXJ_FILESERVER_HOST%:%MXJ_FILESERVER_PORT%/%MXJ_JAR_FILELIST%  Xml:%SET MXJ_SITE_NAME=site1% /PLATF:%MXJ_PLATFORM_NAME% /NNAME:%MXJ_PROCESS_NICK_NAME% 
+
+java -Xbootclasspath/p:jar\xerces.jar;jar\xml-apis.jar;jar\xalan.jar -cp %MXJ_BOOT% -Djava.security.policy=%MXJ_POLICY% -Djava.rmi.server.codebase=http://%MXJ_FILESERVER_HOST%:%MXJ_FILESERVER_PORT%/%MXJ_JAR_FILELIST% murex.rmi.loader.RmiLoader /MXJ_SITE_NAME:%MXJ_SITE_NAME% /MXJ_DESTINATION_SITE_NAME:%MXJ_DESTINATION_SITE_NAME% /MXJ_CLASS_NAME:murex.xml.server.monitor.monitordisplay.MonitorDisplay /MXJ_LOG_LEVEL:%MXJ_LOG_LEVEL% %1 %2 %3 %4 %5 %6
+
+title Command Prompt
+endlocal
