@@ -55,7 +55,7 @@ git push origin nombre_rama
 git checkout master
 git merge nombre_rama
 
-# Subir la rama fusionada a remoto
+# Subir la rama fusionada a remoto 
 git push origin master
 
 # Borrar una rama local
